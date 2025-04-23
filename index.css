@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+/* Custom Styles */
+.markdown-recipe {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.markdown-recipe h1 {
+  @apply text-2xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-2;
+}
+
+.markdown-recipe h2 {
+  @apply text-xl font-semibold text-amber-800 mb-3 mt-5;
+}
+
+.markdown-recipe h3 {
+  @apply text-lg font-medium text-amber-700 mb-2 mt-4;
+}
+
+.markdown-recipe p {
+  @apply my-3;
+}
+
+.markdown-recipe ul, .markdown-recipe ol {
+  @apply my-4 pl-6;
+}
+
+.markdown-recipe ul {
+  @apply list-disc;
+}
+
+.markdown-recipe ol {
+  @apply list-decimal;
+}
+
+.markdown-recipe li {
+  @apply mb-2;
+}
+
+.markdown-recipe strong {
+  @apply font-semibold text-amber-900;
+}
+
+.markdown-recipe em {
+  @apply italic text-amber-800;
+}
+
+.markdown-recipe a {
+  @apply text-amber-600 hover:text-amber-700 underline transition-colors;
+}
+
+.markdown-recipe hr {
+  @apply my-6 border-amber-100;
+}
+
+.markdown-recipe blockquote {
+  @apply pl-4 border-l-4 border-amber-200 italic text-gray-600 my-4;
+}
+
+.markdown-recipe img {
+  @apply rounded-lg shadow-sm max-w-full my-4;
+}
+
+.markdown-recipe code {
+  @apply font-mono text-sm bg-amber-50 rounded px-1 py-0.5 text-amber-800;
+}
+
+/* Animation for page transitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-transition {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Custom button hover effects */
+.btn-hover-effect {
+  @apply relative overflow-hidden;
+}
+
+.btn-hover-effect::after {
+  content: '';
+  @apply absolute inset-0 bg-white opacity-0 transition-opacity;
+}
+
+.btn-hover-effect:hover::after {
+  @apply opacity-20;
+}
+
+/* Loading animation for recipe generation */
+.loading-dot {
+  @apply bg-white rounded-full h-2 w-2 mx-0.5;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    height: 80px;
+    background-color: white;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+header > img {
+    width: 50px;
+}
+
+header > h1 {
+    font-weight: 400;
+}
+
+main {
+    padding: 30px 30px 10px;
+}
+
+.add-ingredient-form {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    height: 38px;
+}
+
+.add-ingredient-form > input {
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    padding: 9px 13px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+    min-width: 150px;
+    max-width: 400px;
+}
+
+.add-ingredient-form > button {
+    font-family: Inter, sans-serif;
+    border-radius: 6px;
+    border: none;
+    background-color: #141413;
+    color: #FAFAF8;
+    width: 150px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.add-ingredient-form > button::before {
+    content: "+";
+    margin-right: 5px;
+}
+
+ul.ingredients-list {
+    margin-bottom: 48px;
+}
+
+ul.ingredients-list > li {
+    color: #475467;
+    line-height: 28px;
+}
+
+.get-recipe-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    background: #F0EFEB;
+    padding: 10px 28px;
+}
+
+.get-recipe-container h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.get-recipe-container p {
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 20px;
+}
+
+.get-recipe-container button {
+    border: none;
+    border-radius: 6px;
+    background: #D17557;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    color: #FAFAF8;
+    padding: 9px 17px;
+    font-family: Inter, sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.suggested-recipe-container {
+    color: #475467;
+    line-height: 28px;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+.suggested-recipe-container ul li, .suggested-recipe-container ol li {
+    margin-bottom: 8px;
+}
